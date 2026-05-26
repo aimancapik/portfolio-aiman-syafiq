@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Shadow -->
+  <path d="M36 62L31 57C15 43 4 33 4 21C4 11 11 4 21 4C27 4 32 7 36 12C40 7 45 4 51 4C61 4 68 11 68 21C68 33 57 43 41 57L36 62Z" fill="#000000"/>
+  <!-- Main Heart -->
+  <path d="M32 58L27 53C11 39 0 29 0 17C0 7 7 0 17 0C23 0 28 3 32 8C36 3 41 0 47 0C57 0 64 7 64 17C64 29 53 39 37 53L32 58Z" fill="#FF90E8" stroke="#000000" stroke-width="4" stroke-linejoin="round"/>
+</svg>

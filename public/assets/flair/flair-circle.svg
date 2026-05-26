@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <!-- Shadow -->
+  <circle cx="36" cy="36" r="24" fill="#000000"/>
+  <!-- Main Circle -->
+  <circle cx="32" cy="32" r="24" fill="#90B8FF" stroke="#000000" stroke-width="4"/>
+  <circle cx="32" cy="32" r="16" fill="#FFFFFF" stroke="#000000" stroke-width="3"/>
+  <circle cx="32" cy="32" r="8" fill="#FF7A00" stroke="#000000" stroke-width="3"/>
+</svg>
