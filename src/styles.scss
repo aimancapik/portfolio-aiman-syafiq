@@ -1,1 +1,104 @@
-/* You can add global styles to this file, and also import other style files */
+// ============================================
+// Global Styles — Neo-Brutalist Portfolio
+// ============================================
+
+@use 'styles/variables' as *;
+@use 'styles/mixins' as *;
+
+// Phosphor Icons — loaded via angular.json styles array
+
+// ---- Reset & Base ----
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: calc(#{$nav-height} + 1rem);
+}
+
+body {
+  font-family: $font-primary;
+  color: $nb-black;
+  background-color: $nb-bg;
+  background-image: radial-gradient($nb-black 1px, transparent 1px);
+  background-size: 20px 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+// Selection
+::selection {
+  background-color: $nb-yellow;
+  color: $nb-black;
+}
+
+// ---- Typography ----
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+// ---- Custom Scrollbar ----
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: $nb-bg;
+  border-left: $border-thin;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $nb-pink;
+  border: $border-thin;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $nb-orange;
+}
+
+// ---- Marquee Animation ----
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+// ---- Page transition ----
+::view-transition-old(root) {
+  animation: fade-out 0.2s ease-in-out;
+}
+
+::view-transition-new(root) {
+  animation: fade-in 0.3s ease-in-out;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

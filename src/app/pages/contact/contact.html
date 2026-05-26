@@ -1,0 +1,70 @@
+<section id="contact" class="contact">
+  <div class="contact__container">
+    <div class="contact__card">
+      <h1 class="contact__title">Let's Build<br>Something.</h1>
+      <p class="contact__subtitle">Currently open for new opportunities.</p>
+
+      <form
+        class="contact__form"
+        [formGroup]="contactForm"
+        (ngSubmit)="onSubmit()">
+
+        <div class="contact__field">
+          <label class="contact__label" for="name">Name</label>
+          <input
+            id="name"
+            type="text"
+            formControlName="name"
+            class="contact__input"
+            placeholder="YOUR NAME"
+            [class.contact__input--error]="contactForm.controls.name.touched && contactForm.controls.name.invalid">
+        </div>
+
+        <div class="contact__field">
+          <label class="contact__label" for="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            class="contact__input"
+            placeholder="YOUR@EMAIL.COM"
+            [class.contact__input--error]="contactForm.controls.email.touched && contactForm.controls.email.invalid">
+        </div>
+
+        <div class="contact__field">
+          <label class="contact__label" for="message">Message</label>
+          <textarea
+            id="message"
+            formControlName="message"
+            class="contact__input contact__textarea"
+            placeholder="YOUR MESSAGE HERE..."
+            rows="4"
+            [class.contact__input--error]="contactForm.controls.message.touched && contactForm.controls.message.invalid"></textarea>
+        </div>
+
+        <button
+          type="submit"
+          class="contact__submit"
+          [disabled]="formState() === 'sending'">
+          @switch (formState()) {
+            @case ('sending') {
+              Sending... <i class="ph-bold ph-spinner"></i>
+            }
+            @case ('success') {
+              Sent! <i class="ph-bold ph-check-circle"></i>
+            }
+            @default {
+              Send It <i class="ph-bold ph-paper-plane-tilt"></i>
+            }
+          }
+        </button>
+
+        @if (formState() === 'success') {
+          <div class="contact__success">
+            Message received! I'll get back to you shortly.
+          </div>
+        }
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,152 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.contact {
+  padding-top: calc(#{$nav-height} + 3rem);
+
+  &__container {
+    max-width: 56rem;
+    margin: 0 auto;
+    padding: 1rem;
+    @include section-padding;
+  }
+
+  &__card {
+    background: $nb-yellow;
+    padding: 2rem;
+    @include nb-border(thick);
+    @include nb-shadow(lg);
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @include respond-to(md) {
+      padding: 3rem;
+    }
+  }
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+
+    @include respond-to(md) {
+      font-size: 4.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+  }
+
+  &__form {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 40rem;
+    margin: 0 auto;
+    background: $nb-white;
+    padding: 1.5rem;
+    @include nb-border(thick);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+
+    @include respond-to(md) {
+      padding: 2rem;
+    }
+  }
+
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    font-size: 1.125rem;
+  }
+
+  &__input {
+    width: 100%;
+    background: $nb-bg;
+    padding: 1rem;
+    @include nb-border;
+    font-family: $font-primary;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+
+    &:focus {
+      outline: none;
+      background: $nb-white;
+    }
+
+    &--error {
+      border-color: #ff4444;
+      box-shadow: 3px 3px 0px #ff4444;
+    }
+  }
+
+  &__textarea {
+    resize: none;
+    min-height: 8rem;
+  }
+
+  &__submit {
+    width: 100%;
+    background: $nb-black;
+    color: $nb-white;
+    font-family: $font-primary;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    padding: 1rem;
+    @include nb-button;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+
+    i {
+      color: $nb-pink;
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
+    .ph-spinner {
+      animation: spin 1s linear infinite;
+    }
+  }
+
+  &__success {
+    background: $nb-green;
+    color: $nb-black;
+    font-weight: 700;
+    padding: 1rem;
+    @include nb-border;
+    text-align: center;
+    text-transform: uppercase;
+    animation: slide-up 0.3s ease-out;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

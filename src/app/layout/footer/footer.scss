@@ -1,0 +1,63 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as *;
+
+.footer {
+  border-top: 4px solid $nb-black;
+  background: $nb-white;
+  padding: 3rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+
+  &__pattern {
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBMMTQgMTRNMjYgMjZMMDAgNDBNNDAgMEwyNiAxNE0xNCAyNkw0MCA0MCIgc3Ryb2tlPSIjZTllOWU5IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPC9zdmc+");
+    opacity: 0.2;
+  }
+
+  &__container {
+    position: relative;
+    z-index: 1;
+    @include container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include respond-to(md) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__brand {
+    font-weight: 900;
+    font-size: 1.875rem;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__social-link {
+    width: 3rem;
+    height: 3rem;
+    @include flex-center;
+    @include nb-button;
+    font-size: 1.5rem;
+
+    &--blue { background: $nb-blue; }
+    &--pink { background: $nb-pink; }
+    &--yellow { background: $nb-yellow; }
+  }
+
+  &__copyright {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+  }
+}

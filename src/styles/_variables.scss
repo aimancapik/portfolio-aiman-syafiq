@@ -1,0 +1,38 @@
+// ============================================
+// Neo-Brutalist Design Tokens
+// ============================================
+
+// Color Palette
+$nb-yellow: #FFD800;
+$nb-pink: #FF90E8;
+$nb-blue: #90B8FF;
+$nb-green: #A7F0BA;
+$nb-orange: #FF7A00;
+$nb-bg: #F4F4F0;
+$nb-black: #000000;
+$nb-white: #FFFFFF;
+
+// Typography
+$font-primary: 'Space Grotesk', sans-serif;
+
+// Borders
+$border-thin: 3px solid $nb-black;
+$border-thick: 5px solid $nb-black;
+
+// Shadows
+$shadow-sm: 6px 6px 0px $nb-black;
+$shadow-lg: 10px 10px 0px $nb-black;
+$shadow-hover: 8px 8px 0px $nb-black;
+$shadow-hover-lg: 14px 14px 0px $nb-black;
+$shadow-active: 0px 0px 0px $nb-black;
+
+// Breakpoints
+$bp-sm: 640px;
+$bp-md: 768px;
+$bp-lg: 1024px;
+$bp-xl: 1280px;
+
+// Spacing
+$nav-height: 80px;
+$container-max: 1280px;
+$container-padding: 1rem;

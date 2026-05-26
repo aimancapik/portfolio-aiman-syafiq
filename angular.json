@@ -52,6 +52,9 @@
               }
             ],
             "styles": [
+              "@phosphor-icons/web/regular/style.css",
+              "@phosphor-icons/web/bold/style.css",
+              "@phosphor-icons/web/fill/style.css",
               "src/styles.scss"
             ],
             "server": "src/main.server.ts",

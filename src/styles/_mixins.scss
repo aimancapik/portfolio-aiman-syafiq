@@ -1,0 +1,105 @@
+// ============================================
+// Neo-Brutalist SCSS Mixins
+// ============================================
+
+@use 'variables' as *;
+
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == sm {
+    @media (min-width: $bp-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $bp-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $bp-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $bp-xl) { @content; }
+  }
+}
+
+// Standard neo-brutalist border
+@mixin nb-border($width: thin) {
+  @if $width == thick {
+    border: $border-thick;
+  } @else {
+    border: $border-thin;
+  }
+}
+
+// Standard shadow
+@mixin nb-shadow($size: sm) {
+  @if $size == lg {
+    box-shadow: $shadow-lg;
+  } @else {
+    box-shadow: $shadow-sm;
+  }
+  transition: all 0.15s ease-in-out;
+}
+
+// Interactive button press effect
+@mixin nb-button() {
+  @include nb-border;
+  @include nb-shadow;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: $shadow-hover;
+  }
+
+  &:active {
+    transform: translate(6px, 6px);
+    box-shadow: $shadow-active;
+  }
+}
+
+// Card with hover lift
+@mixin nb-card() {
+  @include nb-border(thick);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: $shadow-hover-lg;
+  }
+}
+
+// Container
+@mixin container() {
+  max-width: $container-max;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: $container-padding;
+  padding-right: $container-padding;
+
+  @include respond-to(sm) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @include respond-to(lg) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+// Section padding
+@mixin section-padding() {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+// Flex center
+@mixin flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Grid layout
+@mixin grid($cols: 1, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  gap: $gap;
+}

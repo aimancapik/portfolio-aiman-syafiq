@@ -1,0 +1,10 @@
+// App-level styles (minimal — most styling is in components)
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}

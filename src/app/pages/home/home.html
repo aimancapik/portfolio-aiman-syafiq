@@ -1,0 +1,63 @@
+<div class="mouse-trail" aria-hidden="true">
+  @for (image of flairImages(); track $index) {
+    <img #trailImage class="mouse-trail__image" [src]="image" alt="">
+  }
+</div>
+
+<section id="hero" class="hero">
+  <div class="hero__container">
+    <div class="hero__grid">
+      <!-- Left: Text content -->
+      <div class="hero__content">
+        <div class="hero__badge">
+          <p>Full-Stack Engineer</p>
+        </div>
+
+        <h1 class="hero__title">
+          I Write<br>
+          <span class="hero__title-highlight">Clean</span><br>
+          Code.
+        </h1>
+
+        <p class="hero__description">
+          Building robust, scalable applications with a passion for brutal aesthetics and flawless performance.
+        </p>
+
+        <div class="hero__actions">
+          <a (click)="scrollTo('projects')" class="hero__btn hero__btn--primary" style="cursor: pointer;">
+            View Work <i class="ph-bold ph-arrow-down-right"></i>
+          </a>
+          <a href="https://github.com/aimancapik" target="_blank" rel="noopener noreferrer" class="hero__btn hero__btn--secondary">
+            <i class="ph-fill ph-github-logo"></i> Github
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: Brutalist Graphic -->
+      <div class="hero__graphic">
+        <div class="hero__deco-circle"></div>
+        <div class="hero__deco-square"></div>
+
+        <div class="hero__avatar">
+          <div class="hero__avatar-tag">HELLO WORLD</div>
+          <div class="hero__avatar-placeholder">
+            <img src="assets/aiman-capik.JPG" alt="Aiman Syafiq" class="hero__avatar-image">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee Banner -->
+<div class="marquee">
+  <div class="marquee__content">
+    @for (item of marqueeItems(); track item) {
+      <span>⚡ {{ item }}</span><span class="marquee__dot">•</span>
+    }
+    <!-- Duplicate for seamless loop -->
+    @for (item of marqueeItems(); track item) {
+      <span>⚡ {{ item }}</span><span class="marquee__dot">•</span>
+    }
+  </div>
+</div>

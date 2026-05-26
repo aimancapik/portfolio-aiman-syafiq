@@ -1,0 +1,23 @@
+<footer class="footer">
+  <div class="footer__pattern"></div>
+  <div class="footer__container">
+    <div class="footer__brand">AIMAN.DEV</div>
+
+    <div class="footer__socials">
+      @for (link of socialLinks(); track link.label) {
+        <a
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="footer__social-link footer__social-link--{{ link.color }}"
+          [attr.aria-label]="link.label">
+          <i [class]="link.icon"></i>
+        </a>
+      }
+    </div>
+
+    <div class="footer__copyright">
+      &copy; {{ currentYear }} Aiman Syafiq. Built with Angular.
+    </div>
+  </div>
+</footer>
