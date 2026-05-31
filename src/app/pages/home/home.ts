@@ -58,9 +58,34 @@ export class Home implements AfterViewInit, OnDestroy {
   ]);
 
   protected readonly marqueeItems = signal<string[]>([
-    'Angular', 'TypeScript', 'Node.js', 'Python',
-    'PostgreSQL', 'Docker', 'SCSS', 'Firebase',
-    'GraphQL',
+    'IONIC',
+    'ANGULAR',
+    'TYPESCRIPT',
+    'SCSS',
+    'SIGNALS',
+    'RXJS',
+    'REACT',
+    'FLUTTER',
+    'NODE.JS',
+    'EXPRESS',
+    'SUPABASE',
+    'POSTGRESQL',
+    'SQL SERVER',
+    'REST API',
+    'OPENAI API',
+    'AWS SES',
+    'PYTHON',
+    'FIREBASE',
+    'GIT',
+    'GITHUB',
+    'FIGMA',
+    'VERCEL',
+    'RAILWAY',
+    'DOCKER',
+    'POSTMAN',
+    'LINUX',
+    'OLLAMA',
+    'HOSTINGER VPS',
   ]);
 
   ngAfterViewInit(): void {

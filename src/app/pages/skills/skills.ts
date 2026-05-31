@@ -15,7 +15,7 @@ export class Skills {
       color: 'blue',
       rotation: '-1deg',
       hoverColor: 'yellow',
-      skills: ['Angular', 'TypeScript', 'SCSS', 'RxJS', 'Signals'],
+      skills: ['Ionic 8', 'Angular 18', 'TypeScript', 'SCSS', 'Signals', 'RxJS', 'React', 'Flutter', 'Tailwind'],
     },
     {
       title: 'Backend',
@@ -23,7 +23,17 @@ export class Skills {
       color: 'pink',
       rotation: '2deg',
       hoverColor: 'pink',
-      skills: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'Redis'],
+      skills: [
+        'Node.js',
+        'Express',
+        'Supabase',
+        'SQL Server',
+        'PostgreSQL',
+        'REST API',
+        'OpenAI API',
+        'AWS SES',
+        'Python',
+      ],
     },
     {
       title: 'DevOps & Tools',
@@ -31,7 +41,19 @@ export class Skills {
       color: 'green',
       rotation: '-2deg',
       hoverColor: 'green',
-      skills: ['Docker', 'Firebase', 'Git', 'Linux', 'Figma'],
+      skills: [
+        'Firebase',
+        'Git',
+        'Figma',
+        'Vercel',
+        'Railway',
+        'Linux',
+        'Ollama',
+        'Docker',
+        'Postman',
+        'GitHub',
+        'Hostinger VPS',
+      ],
     },
   ]);
 }

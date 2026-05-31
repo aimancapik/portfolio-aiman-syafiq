@@ -11,6 +11,7 @@ type FormState = 'idle' | 'sending' | 'success';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Contact {
+  private readonly whatsappNumber = '60195308755';
   private readonly fb = inject(FormBuilder);
 
   protected readonly formState = signal<FormState>('idle');
@@ -27,17 +28,22 @@ export class Contact {
       return;
     }
 
-    this.formState.set('sending');
+    const { name, email, message } = this.contactForm.getRawValue();
+    const whatsappMessage = [
+      `Hi Aiman, I'm ${name}.`,
+      '',
+      `Email: ${email}`,
+      '',
+      message,
+    ].join('\n');
+    const whatsappUrl = `https://wa.me/${this.whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
-    // Simulate network request
+    globalThis.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    this.formState.set('success');
+    this.contactForm.reset();
+
     setTimeout(() => {
-      this.formState.set('success');
-      this.contactForm.reset();
-
-      // Reset to idle after 5 seconds
-      setTimeout(() => {
-        this.formState.set('idle');
-      }, 5000);
+      this.formState.set('idle');
     }, 1500);
   }
 }

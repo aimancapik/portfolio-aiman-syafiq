@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jack Chen | Software Engineer</title>
-    
+
     <!-- Load Google Fonts: Space Grotesk for that technical, geometric feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- Phosphor Icons for sharp, technical iconography -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    
+
     <!-- Tailwind CSS for rapid layout -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <script>
         tailwind.config = {
             theme: {
@@ -41,7 +43,8 @@
         body {
             background-color: #F4F4F0;
             background-image: radial-gradient(#000000 1px, transparent 1px);
-            background-size: 20px 20px; /* Subtle grid background */
+            background-size: 20px 20px;
+            /* Subtle grid background */
         }
 
         /* Hard solid shadow */
@@ -60,7 +63,7 @@
             transform: translate(-2px, -2px);
             box-shadow: 8px 8px 0px #000;
         }
-        
+
         .nb-button:active {
             transform: translate(6px, 6px);
             box-shadow: 0px 0px 0px #000;
@@ -76,6 +79,7 @@
         .nb-border {
             border: 3px solid #000;
         }
+
         .nb-border-thick {
             border: 5px solid #000;
         }
@@ -89,32 +93,43 @@
             border-bottom: 4px solid #000;
             background-color: #FFD800;
         }
+
         .marquee-content {
             display: inline-block;
             animation: marquee 15s linear infinite;
         }
+
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
         }
 
         /* Custom Scrollbar for extra brutalism */
         ::-webkit-scrollbar {
             width: 16px;
         }
+
         ::-webkit-scrollbar-track {
             background: #F4F4F0;
             border-left: 3px solid #000;
         }
+
         ::-webkit-scrollbar-thumb {
             background: #FF90E8;
             border: 3px solid #000;
         }
+
         ::-webkit-scrollbar-thumb:hover {
             background: #FF7A00;
         }
     </style>
 </head>
+
 <body class="text-black antialiased selection:bg-nb-yellow selection:text-black">
 
     <!-- Navigation -->
@@ -122,18 +137,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex-shrink-0 flex items-center gap-2">
-                    <div class="w-8 h-8 bg-black flex items-center justify-center rotate-3 hover:rotate-12 transition-transform cursor-pointer">
+                    <div
+                        class="w-8 h-8 bg-black flex items-center justify-center rotate-3 hover:rotate-12 transition-transform cursor-pointer">
                         <i class="ph-bold ph-code text-white text-xl"></i>
                     </div>
                     <span class="font-bold text-2xl uppercase tracking-tighter">JACK.DEV</span>
                 </div>
-                
+
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#about" class="font-bold uppercase text-lg hover:bg-nb-yellow px-2 transition-colors">About</a>
-                    <a href="#projects" class="font-bold uppercase text-lg hover:bg-nb-pink px-2 transition-colors">Projects</a>
-                    <a href="#skills" class="font-bold uppercase text-lg hover:bg-nb-green px-2 transition-colors">Skills</a>
-                    <a href="#contact" class="bg-nb-orange text-black px-6 py-2 font-bold uppercase nb-border nb-shadow nb-button inline-flex items-center gap-2">
+                    <a href="#about"
+                        class="font-bold uppercase text-lg hover:bg-nb-yellow px-2 transition-colors">About</a>
+                    <a href="#projects"
+                        class="font-bold uppercase text-lg hover:bg-nb-pink px-2 transition-colors">Projects</a>
+                    <a href="#skills"
+                        class="font-bold uppercase text-lg hover:bg-nb-green px-2 transition-colors">Skills</a>
+                    <a href="#contact"
+                        class="bg-nb-orange text-black px-6 py-2 font-bold uppercase nb-border nb-shadow nb-button inline-flex items-center gap-2">
                         <span>Say Hi</span>
                         <i class="ph-bold ph-paper-plane-right"></i>
                     </a>
@@ -150,41 +170,49 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-nb-blue z-40 hidden flex-col items-center justify-center gap-8 nb-border-thick">
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-nb-blue z-40 hidden flex-col items-center justify-center gap-8 nb-border-thick">
         <button id="close-menu-btn" class="absolute top-6 right-6 bg-white p-2 nb-border nb-shadow nb-button">
             <i class="ph-bold ph-x text-2xl"></i>
         </button>
-        <a href="#about" class="mobile-link font-bold uppercase text-4xl bg-white px-6 py-3 nb-border nb-shadow hover:bg-nb-yellow">About</a>
-        <a href="#projects" class="mobile-link font-bold uppercase text-4xl bg-white px-6 py-3 nb-border nb-shadow hover:bg-nb-pink">Projects</a>
-        <a href="#skills" class="mobile-link font-bold uppercase text-4xl bg-white px-6 py-3 nb-border nb-shadow hover:bg-nb-green">Skills</a>
-        <a href="#contact" class="mobile-link font-bold uppercase text-4xl bg-nb-orange px-6 py-3 nb-border nb-shadow hover:bg-white">Contact</a>
+        <a href="#about"
+            class="mobile-link font-bold uppercase text-4xl bg-white px-6 py-3 nb-border nb-shadow hover:bg-nb-yellow">About</a>
+        <a href="#projects"
+            class="mobile-link font-bold uppercase text-4xl bg-white px-6 py-3 nb-border nb-shadow hover:bg-nb-pink">Projects</a>
+        <a href="#skills"
+            class="mobile-link font-bold uppercase text-4xl bg-white px-6 py-3 nb-border nb-shadow hover:bg-nb-green">Skills</a>
+        <a href="#contact"
+            class="mobile-link font-bold uppercase text-4xl bg-nb-orange px-6 py-3 nb-border nb-shadow hover:bg-white">Contact</a>
     </div>
 
     <!-- Hero Section -->
     <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto min-h-[90vh] flex items-center">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             <!-- Left: Text content -->
             <div class="space-y-8 z-10">
                 <div class="inline-block bg-nb-green px-4 py-2 nb-border nb-shadow rotate-[-2deg]">
                     <p class="font-bold text-lg uppercase tracking-widest">Full-Stack Engineer</p>
                 </div>
-                
+
                 <h1 class="text-6xl sm:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tighter">
                     I Write<br>
                     <span class="bg-nb-yellow inline-block px-4 mt-2 nb-border rotate-[1deg]">Clean</span><br>
                     Code.
                 </h1>
-                
+
                 <p class="text-xl sm:text-2xl font-semibold max-w-lg leading-relaxed bg-white p-4 nb-border nb-shadow">
-                    Building robust, scalable applications with a passion for brutal aesthetics and flawless performance.
+                    Building robust, scalable applications with a passion for brutal aesthetics and flawless
+                    performance.
                 </p>
-                
+
                 <div class="flex flex-wrap gap-4 pt-4">
-                    <a href="#projects" class="bg-black text-white px-8 py-4 font-bold text-xl uppercase nb-border nb-shadow nb-button flex items-center gap-2">
+                    <a href="#projects"
+                        class="bg-black text-white px-8 py-4 font-bold text-xl uppercase nb-border nb-shadow nb-button flex items-center gap-2">
                         View Work <i class="ph-bold ph-arrow-down-right text-nb-yellow"></i>
                     </a>
-                    <a href="https://github.com" target="_blank" class="bg-white text-black px-8 py-4 font-bold text-xl uppercase nb-border nb-shadow nb-button flex items-center gap-2">
+                    <a href="https://github.com" target="_blank"
+                        class="bg-white text-black px-8 py-4 font-bold text-xl uppercase nb-border nb-shadow nb-button flex items-center gap-2">
                         <i class="ph-fill ph-github-logo text-2xl"></i> Github
                     </a>
                 </div>
@@ -193,19 +221,27 @@
             <!-- Right: Brutalist Graphic -->
             <div class="relative flex justify-center items-center h-full">
                 <!-- Decorative Elements -->
-                <div class="absolute w-64 h-64 bg-nb-pink rounded-full blur-none nb-border-thick nb-shadow-lg -z-10 translate-x-10 translate-y-10"></div>
-                <div class="absolute w-32 h-32 bg-nb-blue rotate-45 nb-border-thick nb-shadow -z-10 -translate-x-20 -translate-y-20"></div>
-                
+                <div
+                    class="absolute w-64 h-64 bg-nb-pink rounded-full blur-none nb-border-thick nb-shadow-lg -z-10 translate-x-10 translate-y-10">
+                </div>
+                <div
+                    class="absolute w-32 h-32 bg-nb-blue rotate-45 nb-border-thick nb-shadow -z-10 -translate-x-20 -translate-y-20">
+                </div>
+
                 <!-- Main Avatar / Placeholder -->
-                <div class="w-full max-w-md aspect-square bg-white nb-border-thick nb-shadow-lg p-6 relative overflow-hidden group">
-                    <div class="absolute top-0 right-0 bg-nb-orange text-black font-bold px-4 py-1 nb-border-l nb-border-b z-10 border-l-4 border-b-4 border-black">
+                <div
+                    class="w-full max-w-md aspect-square bg-white nb-border-thick nb-shadow-lg p-6 relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 bg-nb-orange text-black font-bold px-4 py-1 nb-border-l nb-border-b z-10 border-l-4 border-b-4 border-black">
                         HELLO WORLD
                     </div>
                     <!-- Placeholder Profile Image -->
-                    <img src="https://placehold.co/600x600/FFD800/000000?text=FACE+HERE" alt="Profile" class="w-full h-full object-cover nb-border grayscale group-hover:grayscale-0 transition-all duration-300">
-                    
+                    <img src="https://placehold.co/600x600/FFD800/000000?text=FACE+HERE" alt="Profile"
+                        class="w-full h-full object-cover nb-border grayscale group-hover:grayscale-0 transition-all duration-300">
+
                     <!-- Floating badges -->
-                    <div class="absolute bottom-10 -left-6 bg-white px-4 py-2 font-bold nb-border nb-shadow flex items-center gap-2 rotate-[-5deg] group-hover:rotate-0 transition-transform">
+                    <div
+                        class="absolute bottom-10 -left-6 bg-white px-4 py-2 font-bold nb-border nb-shadow flex items-center gap-2 rotate-[-5deg] group-hover:rotate-0 transition-transform">
                         <i class="ph-fill ph-coffee text-nb-orange"></i> 10k+ Commits
                     </div>
                 </div>
@@ -243,11 +279,12 @@
     <section id="about" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="flex flex-col md:flex-row gap-16 items-start">
             <div class="md:w-1/3">
-                <h2 class="text-5xl md:text-7xl font-black uppercase bg-white inline-block px-4 py-2 nb-border-thick nb-shadow-lg rotate-[-2deg]">
+                <h2
+                    class="text-5xl md:text-7xl font-black uppercase bg-white inline-block px-4 py-2 nb-border-thick nb-shadow-lg rotate-[-2deg]">
                     About<br>Me
                 </h2>
             </div>
-            
+
             <div class="md:w-2/3 bg-nb-blue p-8 md:p-12 nb-border-thick nb-shadow-lg relative">
                 <!-- Pin decorative elements -->
                 <div class="absolute top-4 left-4 w-4 h-4 bg-white rounded-full nb-border"></div>
@@ -257,16 +294,20 @@
 
                 <div class="bg-white p-6 nb-border mb-6">
                     <p class="text-xl font-bold leading-relaxed">
-                        I'm Jack, a software engineer with over 5 years of experience building things that live on the internet. I specialize in backend architecture, intuitive frontends, and bridging the gap between design and robust engineering.
+                        I'm Jack, a software engineer with over 5 years of experience building things that live on the
+                        internet. I specialize in backend architecture, intuitive frontends, and bridging the gap
+                        between design and robust engineering.
                     </p>
                 </div>
-                
+
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div class="bg-nb-yellow p-4 text-center nb-border nb-shadow flex flex-col items-center justify-center">
+                    <div
+                        class="bg-nb-yellow p-4 text-center nb-border nb-shadow flex flex-col items-center justify-center">
                         <span class="text-4xl font-black block">5+</span>
                         <span class="font-bold text-sm uppercase">Years Exp.</span>
                     </div>
-                    <div class="bg-nb-pink p-4 text-center nb-border nb-shadow flex flex-col items-center justify-center">
+                    <div
+                        class="bg-nb-pink p-4 text-center nb-border nb-shadow flex flex-col items-center justify-center">
                         <span class="text-4xl font-black block">40+</span>
                         <span class="font-bold text-sm uppercase">Projects</span>
                     </div>
@@ -274,7 +315,8 @@
                         <span class="text-4xl font-black block">12</span>
                         <span class="font-bold text-sm uppercase">Hackathons</span>
                     </div>
-                    <div class="bg-nb-orange p-4 text-center nb-border nb-shadow flex flex-col items-center justify-center">
+                    <div
+                        class="bg-nb-orange p-4 text-center nb-border nb-shadow flex flex-col items-center justify-center">
                         <span class="text-4xl font-black block">∞</span>
                         <span class="font-bold text-sm uppercase">Coffees</span>
                     </div>
@@ -288,17 +330,20 @@
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-5xl md:text-7xl font-black uppercase text-white mb-6 inline-block">
-                    Selected <span class="bg-nb-pink text-black px-4 nb-border nb-shadow rotate-[2deg] inline-block">Works</span>
+                    Selected <span
+                        class="bg-nb-pink text-black px-4 nb-border nb-shadow rotate-[2deg] inline-block">Works</span>
                 </h2>
-                <p class="text-xl text-white font-bold max-w-2xl mx-auto">Stuff I built recently. Warning: They load blazingly fast.</p>
+                <p class="text-xl text-white font-bold max-w-2xl mx-auto">Stuff I built recently. Warning: They load
+                    blazingly fast.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                
+
                 <!-- Project 1 -->
                 <div class="bg-white nb-border-thick nb-card transition-all duration-200 flex flex-col h-full">
                     <div class="h-48 bg-nb-yellow border-b-4 border-black relative overflow-hidden group">
-                        <img src="https://placehold.co/600x400/90B8FF/000000?text=FINTECH+APP" alt="Project 1" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="https://placehold.co/600x400/90B8FF/000000?text=FINTECH+APP" alt="Project 1"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute top-2 right-2 flex gap-2">
                             <span class="bg-white px-2 py-1 text-xs font-bold uppercase nb-border">React</span>
                             <span class="bg-white px-2 py-1 text-xs font-bold uppercase nb-border">Node.js</span>
@@ -306,10 +351,14 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-2xl font-black uppercase mb-2">Finance Flow</h3>
-                        <p class="font-semibold text-gray-700 mb-6 flex-grow">A high-performance dashboard for tracking crypto and fiat assets in real-time using WebSockets.</p>
+                        <p class="font-semibold text-gray-700 mb-6 flex-grow">A high-performance dashboard for tracking
+                            crypto and fiat assets in real-time using WebSockets.</p>
                         <div class="flex gap-4 mt-auto">
-                            <a href="#" class="flex-1 text-center bg-black text-white py-2 font-bold uppercase nb-border nb-button">Live</a>
-                            <a href="#" class="flex-1 text-center bg-white text-black py-2 font-bold uppercase nb-border nb-button"><i class="ph-bold ph-github-logo"></i> Code</a>
+                            <a href="#"
+                                class="flex-1 text-center bg-black text-white py-2 font-bold uppercase nb-border nb-button">Live</a>
+                            <a href="#"
+                                class="flex-1 text-center bg-white text-black py-2 font-bold uppercase nb-border nb-button"><i
+                                    class="ph-bold ph-github-logo"></i> Code</a>
                         </div>
                     </div>
                 </div>
@@ -317,7 +366,8 @@
                 <!-- Project 2 -->
                 <div class="bg-white nb-border-thick nb-card transition-all duration-200 flex flex-col h-full">
                     <div class="h-48 bg-nb-pink border-b-4 border-black relative overflow-hidden group">
-                        <img src="https://placehold.co/600x400/A7F0BA/000000?text=TASK+MANAGER" alt="Project 2" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="https://placehold.co/600x400/A7F0BA/000000?text=TASK+MANAGER" alt="Project 2"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute top-2 right-2 flex gap-2">
                             <span class="bg-white px-2 py-1 text-xs font-bold uppercase nb-border">Vue</span>
                             <span class="bg-white px-2 py-1 text-xs font-bold uppercase nb-border">Firebase</span>
@@ -325,18 +375,24 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-2xl font-black uppercase mb-2">BrutalTask</h3>
-                        <p class="font-semibold text-gray-700 mb-6 flex-grow">A visually aggressive, no-nonsense task manager that yells at you if you miss deadlines.</p>
+                        <p class="font-semibold text-gray-700 mb-6 flex-grow">A visually aggressive, no-nonsense task
+                            manager that yells at you if you miss deadlines.</p>
                         <div class="flex gap-4 mt-auto">
-                            <a href="#" class="flex-1 text-center bg-black text-white py-2 font-bold uppercase nb-border nb-button">Live</a>
-                            <a href="#" class="flex-1 text-center bg-white text-black py-2 font-bold uppercase nb-border nb-button"><i class="ph-bold ph-github-logo"></i> Code</a>
+                            <a href="#"
+                                class="flex-1 text-center bg-black text-white py-2 font-bold uppercase nb-border nb-button">Live</a>
+                            <a href="#"
+                                class="flex-1 text-center bg-white text-black py-2 font-bold uppercase nb-border nb-button"><i
+                                    class="ph-bold ph-github-logo"></i> Code</a>
                         </div>
                     </div>
                 </div>
 
                 <!-- Project 3 -->
-                <div class="bg-white nb-border-thick nb-card transition-all duration-200 flex flex-col h-full md:col-span-2 lg:col-span-1">
+                <div
+                    class="bg-white nb-border-thick nb-card transition-all duration-200 flex flex-col h-full md:col-span-2 lg:col-span-1">
                     <div class="h-48 bg-nb-orange border-b-4 border-black relative overflow-hidden group">
-                        <img src="https://placehold.co/600x400/FFD800/000000?text=E-COMMERCE" alt="Project 3" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="https://placehold.co/600x400/FFD800/000000?text=E-COMMERCE" alt="Project 3"
+                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
                         <div class="absolute top-2 right-2 flex gap-2">
                             <span class="bg-white px-2 py-1 text-xs font-bold uppercase nb-border">Next.js</span>
                             <span class="bg-white px-2 py-1 text-xs font-bold uppercase nb-border">Stripe</span>
@@ -344,10 +400,14 @@
                     </div>
                     <div class="p-6 flex flex-col flex-grow">
                         <h3 class="text-2xl font-black uppercase mb-2">RetroKicks</h3>
-                        <p class="font-semibold text-gray-700 mb-6 flex-grow">Headless e-commerce platform for vintage sneakers, integrating Stripe for smooth payments.</p>
+                        <p class="font-semibold text-gray-700 mb-6 flex-grow">Headless e-commerce platform for vintage
+                            sneakers, integrating Stripe for smooth payments.</p>
                         <div class="flex gap-4 mt-auto">
-                            <a href="#" class="flex-1 text-center bg-black text-white py-2 font-bold uppercase nb-border nb-button">Live</a>
-                            <a href="#" class="flex-1 text-center bg-white text-black py-2 font-bold uppercase nb-border nb-button"><i class="ph-bold ph-github-logo"></i> Code</a>
+                            <a href="#"
+                                class="flex-1 text-center bg-black text-white py-2 font-bold uppercase nb-border nb-button">Live</a>
+                            <a href="#"
+                                class="flex-1 text-center bg-white text-black py-2 font-bold uppercase nb-border nb-button"><i
+                                    class="ph-bold ph-github-logo"></i> Code</a>
                         </div>
                     </div>
                 </div>
@@ -360,50 +420,70 @@
     <section id="skills" class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div class="bg-white nb-border-thick nb-shadow-lg p-8 md:p-16">
             <h2 class="text-4xl md:text-6xl font-black uppercase mb-12 text-center">Tech Arsenal</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
                 <!-- Frontend -->
                 <div>
-                    <div class="flex items-center gap-3 mb-6 bg-nb-blue p-3 nb-border nb-shadow inline-flex rotate-[-1deg]">
+                    <div
+                        class="flex items-center gap-3 mb-6 bg-nb-blue p-3 nb-border nb-shadow inline-flex rotate-[-1deg]">
                         <i class="ph-bold ph-browser text-2xl"></i>
                         <h3 class="text-2xl font-black uppercase">Frontend</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">React</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">Next.js</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">TypeScript</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">Tailwind CSS</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">Framer Motion</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">React</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">Next.js</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">TypeScript</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">Tailwind
+                            CSS</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-yellow cursor-default transition-colors">Framer
+                            Motion</span>
                     </div>
                 </div>
 
                 <!-- Backend -->
                 <div>
-                    <div class="flex items-center gap-3 mb-6 bg-nb-pink p-3 nb-border nb-shadow inline-flex rotate-[2deg]">
+                    <div
+                        class="flex items-center gap-3 mb-6 bg-nb-pink p-3 nb-border nb-shadow inline-flex rotate-[2deg]">
                         <i class="ph-bold ph-database text-2xl"></i>
                         <h3 class="text-2xl font-black uppercase">Backend</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">Node.js</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">Python</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">PostgreSQL</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">MongoDB</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">Redis</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">Node.js</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">Python</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">PostgreSQL</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">MongoDB</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-pink cursor-default transition-colors">Redis</span>
                     </div>
                 </div>
 
                 <!-- Tools -->
                 <div>
-                    <div class="flex items-center gap-3 mb-6 bg-nb-green p-3 nb-border nb-shadow inline-flex rotate-[-2deg]">
+                    <div
+                        class="flex items-center gap-3 mb-6 bg-nb-green p-3 nb-border nb-shadow inline-flex rotate-[-2deg]">
                         <i class="ph-bold ph-wrench text-2xl"></i>
                         <h3 class="text-2xl font-black uppercase">DevOps & Tools</h3>
                     </div>
                     <div class="flex flex-wrap gap-3">
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Docker</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">AWS</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Git</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Linux</span>
-                        <span class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Figma</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Docker</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">AWS</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Git</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Linux</span>
+                        <span
+                            class="bg-white px-4 py-2 font-bold uppercase nb-border hover:bg-nb-green cursor-default transition-colors">Figma</span>
                     </div>
                 </div>
             </div>
@@ -415,26 +495,35 @@
         <div class="bg-nb-yellow p-8 md:p-12 nb-border-thick nb-shadow-lg text-center mb-8">
             <h2 class="text-5xl md:text-7xl font-black uppercase mb-6">Let's Build<br>Something.</h2>
             <p class="text-xl font-bold mb-8">Currently open for new opportunities.</p>
-            
-            <form id="contact-form" class="text-left space-y-6 max-w-2xl mx-auto bg-white p-6 md:p-8 nb-border-thick shadow-[8px_8px_0px_rgba(0,0,0,1)]">
+
+            <form id="contact-form"
+                class="text-left space-y-6 max-w-2xl mx-auto bg-white p-6 md:p-8 nb-border-thick shadow-[8px_8px_0px_rgba(0,0,0,1)]">
                 <div>
                     <label class="block font-black uppercase mb-2 text-lg">Name</label>
-                    <input type="text" required class="w-full bg-nb-bg p-4 nb-border font-bold focus:outline-none focus:bg-white focus:ring-0 transition-colors" placeholder="JOHN DOE">
+                    <input type="text" required
+                        class="w-full bg-nb-bg p-4 nb-border font-bold focus:outline-none focus:bg-white focus:ring-0 transition-colors"
+                        placeholder="JOHN DOE">
                 </div>
                 <div>
                     <label class="block font-black uppercase mb-2 text-lg">Email</label>
-                    <input type="email" required class="w-full bg-nb-bg p-4 nb-border font-bold focus:outline-none focus:bg-white focus:ring-0 transition-colors" placeholder="JOHN@EXAMPLE.COM">
+                    <input type="email" required
+                        class="w-full bg-nb-bg p-4 nb-border font-bold focus:outline-none focus:bg-white focus:ring-0 transition-colors"
+                        placeholder="JOHN@EXAMPLE.COM">
                 </div>
                 <div>
                     <label class="block font-black uppercase mb-2 text-lg">Message</label>
-                    <textarea required rows="4" class="w-full bg-nb-bg p-4 nb-border font-bold focus:outline-none focus:bg-white focus:ring-0 transition-colors resize-none" placeholder="YOUR MESSAGE HERE..."></textarea>
+                    <textarea required rows="4"
+                        class="w-full bg-nb-bg p-4 nb-border font-bold focus:outline-none focus:bg-white focus:ring-0 transition-colors resize-none"
+                        placeholder="YOUR MESSAGE HERE..."></textarea>
                 </div>
-                <button type="submit" class="w-full bg-black text-white font-black text-2xl uppercase py-4 nb-border nb-shadow nb-button flex justify-center items-center gap-3">
+                <button type="submit"
+                    class="w-full bg-black text-white font-black text-2xl uppercase py-4 nb-border nb-shadow nb-button flex justify-center items-center gap-3">
                     Send It <i class="ph-bold ph-paper-plane-tilt text-nb-pink"></i>
                 </button>
-                
+
                 <!-- Success Message Container (Hidden by default) -->
-                <div id="success-msg" class="hidden bg-nb-green text-black font-bold p-4 nb-border text-center uppercase mt-4">
+                <div id="success-msg"
+                    class="hidden bg-nb-green text-black font-bold p-4 nb-border text-center uppercase mt-4">
                     Message received! I'll get back to you shortly.
                 </div>
             </form>
@@ -443,22 +532,27 @@
 
     <!-- Footer -->
     <footer class="border-t-4 border-black bg-white py-12 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBMMTQgMTRNMjYgMjZMMDAgNDBNNDAgMEwyNiAxNE0xNCAyNkw0MCA0MCIgc3Ryb2tlPSIjZTllOWU5IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPC9zdmc+')] opacity-20"></div>
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CjxwYXRoIGQ9Ik0wIDBMMTQgMTRNMjYgMjZMMDAgNDBNNDAgMEwyNiAxNE0xNCAyNkw0MCA0MCIgc3Ryb2tlPSIjZTllOWU5IiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiLz4KPC9zdmc+')] opacity-20">
+        </div>
         <div class="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="font-black text-3xl uppercase tracking-tighter">JACK.DEV</div>
-            
+
             <div class="flex gap-4">
-                <a href="#" class="w-12 h-12 bg-nb-blue flex items-center justify-center nb-border nb-shadow nb-button text-2xl">
+                <a href="#"
+                    class="w-12 h-12 bg-nb-blue flex items-center justify-center nb-border nb-shadow nb-button text-2xl">
                     <i class="ph-fill ph-twitter-logo"></i>
                 </a>
-                <a href="#" class="w-12 h-12 bg-nb-pink flex items-center justify-center nb-border nb-shadow nb-button text-2xl">
+                <a href="#"
+                    class="w-12 h-12 bg-nb-pink flex items-center justify-center nb-border nb-shadow nb-button text-2xl">
                     <i class="ph-fill ph-linkedin-logo"></i>
                 </a>
-                <a href="#" class="w-12 h-12 bg-nb-yellow flex items-center justify-center nb-border nb-shadow nb-button text-2xl">
+                <a href="#"
+                    class="w-12 h-12 bg-nb-yellow flex items-center justify-center nb-border nb-shadow nb-button text-2xl">
                     <i class="ph-fill ph-github-logo"></i>
                 </a>
             </div>
-            
+
             <div class="font-bold uppercase text-sm">
                 &copy; 2026 Jack Chen. No rights reserved.
             </div>
@@ -481,7 +575,7 @@
 
             mobileMenuBtn.addEventListener('click', toggleMenu);
             closeMenuBtn.addEventListener('click', toggleMenu);
-            
+
             mobileLinks.forEach(link => {
                 link.addEventListener('click', toggleMenu);
             });
@@ -502,18 +596,18 @@
 
             contactForm.addEventListener('submit', (e) => {
                 e.preventDefault();
-                
+
                 // Change button text temporarily
                 const btn = contactForm.querySelector('button[type="submit"]');
                 const originalContent = btn.innerHTML;
                 btn.innerHTML = 'Sending... <i class="ph-bold ph-spinner animate-spin"></i>';
-                
+
                 // Simulate network request
                 setTimeout(() => {
                     contactForm.reset();
                     btn.innerHTML = originalContent;
                     successMsg.classList.remove('hidden');
-                    
+
                     // Hide success message after 5 seconds
                     setTimeout(() => {
                         successMsg.classList.add('hidden');
@@ -523,4 +617,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -2,6 +2,7 @@ export interface Project {
   readonly title: string;
   readonly description: string;
   readonly image: string;
+  readonly screens?: readonly string[];
   readonly tags: readonly string[];
   readonly liveUrl: string;
   readonly codeUrl: string;
