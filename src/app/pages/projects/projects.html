@@ -75,6 +75,8 @@
             <div class="project-card__actions">
               <a
                 [attr.href]="project.liveUrl === '#' ? null : project.liveUrl"
+                [attr.target]="project.liveUrl === '#' ? null : '_blank'"
+                [attr.rel]="project.liveUrl === '#' ? null : 'noopener noreferrer'"
                 class="project-card__btn project-card__btn--primary"
                 [class.project-card__btn--disabled]="project.liveUrl === '#'"
                 [attr.aria-disabled]="project.liveUrl === '#'"
