@@ -6,7 +6,7 @@
   width: 100%;
   z-index: 50;
   background: $nb-white;
-  border-bottom: 5px solid $nb-black;
+  border-bottom: $border-thin;
   box-shadow: $shadow-sm;
 
   &__container {
@@ -31,11 +31,11 @@
       height: 2rem;
       background: $nb-black;
       @include flex-center;
-      transform: rotate(3deg);
+      border-radius: 0.5rem;
       transition: transform 0.3s ease;
 
       &:hover {
-        transform: rotate(12deg);
+        transform: translateY(-1px);
       }
 
       i {
@@ -48,7 +48,7 @@
       font-weight: 700;
       font-size: 1.5rem;
       text-transform: uppercase;
-      letter-spacing: -0.05em;
+      letter-spacing: 0;
     }
   }
 
@@ -71,17 +71,17 @@
 
     &--yellow:hover,
     &--yellow.active {
-      background-color: $nb-yellow;
+      color: $nb-yellow;
     }
 
     &--pink:hover,
     &--pink.active {
-      background-color: $nb-pink;
+      color: $nb-pink;
     }
 
     &--green:hover,
     &--green.active {
-      background-color: $nb-green;
+      color: $nb-green;
     }
   }
 
@@ -94,6 +94,7 @@
     padding: 0.5rem 1.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    border-radius: 999px;
     @include nb-button;
 
     &.active {
@@ -108,7 +109,7 @@
       display: none;
     }
 
-    background: $nb-yellow;
+    background: $nb-white;
     padding: 0.5rem;
     @include nb-button;
     border: none;
@@ -122,7 +123,7 @@
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background: $nb-blue;
+  background: $nb-bg;
   z-index: 40;
   display: flex;
   flex-direction: column;
@@ -138,6 +139,7 @@
     right: 1.5rem;
     background: $nb-white;
     padding: 0.5rem;
+    border-radius: 999px;
     @include nb-button;
 
     i {
@@ -151,6 +153,7 @@
     font-size: 2.25rem;
     background: $nb-white;
     padding: 0.75rem 1.5rem;
+    border-radius: 999px;
     @include nb-border;
     @include nb-shadow;
     transition: background-color 0.2s ease;

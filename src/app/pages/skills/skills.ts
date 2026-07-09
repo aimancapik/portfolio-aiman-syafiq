@@ -52,6 +52,7 @@ export class Skills {
         'Docker',
         'Postman',
         'GitHub',
+        'Azure DevOps',
         'Hostinger VPS',
       ],
     },

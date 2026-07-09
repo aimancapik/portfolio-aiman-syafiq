@@ -9,7 +9,7 @@ import type { Stat } from '../../shared/models/portfolio.model';
 })
 export class About {
   protected readonly bio = signal(
-    `I'm Aiman Syafiq, a full-stack engineer with a thing for well-crafted apps. I build across the whole stack: Angular, Ionic, Node.js, and everything in between. I actually give a damn about the details. Good code and good taste, all in one.`
+    `I'm Aiman Syafiq, a full-stack engineer focused on well-crafted web and mobile apps. I build across the stack with Angular, Ionic, TypeScript, Node.js, and practical cloud tools. My work leans on clean interfaces, reliable data flows, performance, and maintainable code that can keep moving after launch.`
   );
 
   protected readonly stats = signal<Stat[]>([

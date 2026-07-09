@@ -1,10 +1,10 @@
 <section id="projects" class="projects">
   <div class="projects__container">
     <div class="projects__header">
-      <h1 class="projects__title">
+      <h2 class="projects__title">
         Selected <span class="projects__title-accent">Works</span>
-      </h1>
-      <p class="projects__subtitle">Stuff I built recently. Warning: They load blazingly fast.</p>
+      </h2>
+      <p class="projects__subtitle">Recent work across product interfaces, backend systems, and practical delivery.</p>
     </div>
 
     <div class="projects__grid">
@@ -65,7 +65,7 @@
           </div>
 
           <div class="project-card__body">
-            <h2 class="project-card__title">{{ project.title }}</h2>
+            <h3 class="project-card__title">{{ project.title }}</h3>
             <div class="project-card__tags">
               @for (tag of project.tags; track tag) {
                 <span class="project-card__tag">{{ tag }}</span>

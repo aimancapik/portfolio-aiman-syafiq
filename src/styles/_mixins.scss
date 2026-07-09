@@ -44,12 +44,12 @@
   transition: all 0.15s ease-in-out;
 
   &:hover {
-    transform: translate(-2px, -2px);
+    transform: translateY(-2px);
     box-shadow: $shadow-hover;
   }
 
   &:active {
-    transform: translate(6px, 6px);
+    transform: translateY(0);
     box-shadow: $shadow-active;
   }
 }
@@ -60,7 +60,7 @@
   transition: all 0.2s ease-in-out;
 
   &:hover {
-    transform: translate(-4px, -4px);
+    transform: translateY(-4px);
     box-shadow: $shadow-hover-lg;
   }
 }

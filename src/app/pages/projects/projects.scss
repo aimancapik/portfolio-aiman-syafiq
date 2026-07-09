@@ -27,12 +27,8 @@
 
     &-accent {
       display: inline-block;
-      background: $nb-pink;
-      color: $nb-black;
-      padding: 0 1rem;
-      @include nb-border;
-      @include nb-shadow;
-      transform: rotate(2deg);
+      color: $nb-yellow;
+      padding: 0;
     }
   }
 
@@ -78,11 +74,11 @@
     height: 21rem;
   }
 
-  &--blue .project-card__media { background: $nb-blue; }
-  &--pink .project-card__media { background: $nb-pink; }
-  &--orange .project-card__media { background: $nb-orange; }
-  &--yellow .project-card__media { background: $nb-yellow; }
-  &--green .project-card__media { background: $nb-green; }
+  &--blue .project-card__media { background: rgba($nb-blue, 0.22); }
+  &--pink .project-card__media { background: rgba($nb-pink, 0.22); }
+  &--orange .project-card__media { background: rgba($nb-orange, 0.22); }
+  &--yellow .project-card__media { background: rgba($nb-yellow, 0.22); }
+  &--green .project-card__media { background: rgba($nb-green, 0.22); }
 
   &__thumbnail,
   &__placeholder {
@@ -150,9 +146,9 @@
     flex: 0 0 auto;
     overflow: hidden;
     background: $nb-white;
-    border: 5px solid $nb-black;
-    border-radius: 1.75rem;
-    box-shadow: 10px 10px 0 rgba($nb-black, 0.22);
+    border: $border-thick;
+    border-radius: 1.25rem;
+    box-shadow: 0 16px 34px rgba($nb-black, 0.18);
 
     .project-card__thumbnail {
       height: 100%;
@@ -195,6 +191,7 @@
     font-weight: 700;
     text-transform: uppercase;
     @include nb-border;
+    border-radius: 999px;
   }
 
   &__body {
@@ -211,7 +208,7 @@
 
   &__desc {
     font-weight: 600;
-    color: #555;
+    color: rgba($nb-black, 0.68);
     margin-bottom: 1.5rem;
     flex-grow: 1;
     line-height: 1.5;
@@ -229,6 +226,7 @@
     padding: 0.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    border-radius: 999px;
     @include nb-button;
     display: inline-flex;
     align-items: center;

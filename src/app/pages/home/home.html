@@ -1,10 +1,5 @@
-<div class="mouse-trail" aria-hidden="true">
-  @for (image of flairImages(); track $index) {
-  <img #trailImage class="mouse-trail__image" [src]="image" alt="">
-  }
-</div>
-
 <section id="hero" class="hero">
+  <app-shader-background />
   <div class="hero__container">
     <div class="hero__grid">
       <!-- Left: Text content -->
@@ -14,13 +9,13 @@
         </div>
 
         <h1 class="hero__title">
-          I Write<br>
-          <span class="hero__title-highlight">Clean</span><br>
-          Code.
+          Full-Stack<br>
+          <span class="hero__title-highlight">Engineer</span><br>
+          Shipping Apps.
         </h1>
 
         <p class="hero__description">
-          Building robust, scalable applications with a passion for brutal aesthetics and flawless performance.
+          I build fast, reliable web and mobile apps with Angular, Ionic, TypeScript, and Node.js.
         </p>
 
         <div class="hero__actions">
@@ -40,7 +35,7 @@
         <div class="hero__deco-square"></div>
 
         <div class="hero__avatar">
-          <div class="hero__avatar-tag">HELLO WORLD</div>
+          <div class="hero__avatar-tag">AIMAN SYAFIQ</div>
           <div class="hero__avatar-placeholder">
             <img src="assets/aiman-capik.JPG" alt="Aiman Syafiq" class="hero__avatar-image">
           </div>
@@ -54,11 +49,11 @@
 <div class="marquee">
   <div class="marquee__content">
     @for (item of marqueeItems(); track item) {
-    <span>⚡ {{ item }}</span><span class="marquee__dot">•</span>
+    <span>{{ item }}</span><span class="marquee__dot">/</span>
     }
     <!-- Duplicate for seamless loop -->
     @for (item of marqueeItems(); track item) {
-    <span>⚡ {{ item }}</span><span class="marquee__dot">•</span>
+    <span>{{ item }}</span><span class="marquee__dot">/</span>
     }
   </div>
 </div>

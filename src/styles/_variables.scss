@@ -3,28 +3,28 @@
 // ============================================
 
 // Color Palette
-$nb-yellow: #FFD800;
-$nb-pink: #FF90E8;
-$nb-blue: #90B8FF;
-$nb-green: #A7F0BA;
-$nb-orange: #FF7A00;
-$nb-bg: #F4F4F0;
-$nb-black: #000000;
+$nb-yellow: #C9A227;
+$nb-pink: #B86F8A;
+$nb-blue: #6F87A8;
+$nb-green: #6F8F78;
+$nb-orange: #B76E32;
+$nb-bg: #F3F1EA;
+$nb-black: #151515;
 $nb-white: #FFFFFF;
 
 // Typography
 $font-primary: 'Space Grotesk', sans-serif;
 
 // Borders
-$border-thin: 3px solid $nb-black;
-$border-thick: 5px solid $nb-black;
+$border-thin: 1px solid $nb-black;
+$border-thick: 2px solid $nb-black;
 
 // Shadows
-$shadow-sm: 6px 6px 0px $nb-black;
-$shadow-lg: 10px 10px 0px $nb-black;
-$shadow-hover: 8px 8px 0px $nb-black;
-$shadow-hover-lg: 14px 14px 0px $nb-black;
-$shadow-active: 0px 0px 0px $nb-black;
+$shadow-sm: 0 14px 32px rgba(21, 21, 21, 0.08);
+$shadow-lg: 0 24px 60px rgba(21, 21, 21, 0.14);
+$shadow-hover: 0 18px 42px rgba(21, 21, 21, 0.14);
+$shadow-hover-lg: 0 28px 70px rgba(21, 21, 21, 0.18);
+$shadow-active: 0 8px 18px rgba(21, 21, 21, 0.1);
 
 // Breakpoints
 $bp-sm: 640px;

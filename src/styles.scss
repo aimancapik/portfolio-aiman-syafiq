@@ -28,8 +28,10 @@ body {
   font-family: $font-primary;
   color: $nb-black;
   background-color: $nb-bg;
-  background-image: radial-gradient($nb-black 1px, transparent 1px);
-  background-size: 20px 20px;
+  background-image:
+    linear-gradient(rgba($nb-black, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba($nb-black, 0.045) 1px, transparent 1px);
+  background-size: 40px 40px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -37,16 +39,16 @@ body {
 
 // Selection
 ::selection {
-  background-color: $nb-yellow;
+  background-color: rgba($nb-yellow, 0.35);
   color: $nb-black;
 }
 
 // ---- Typography ----
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 900;
+  font-weight: 800;
   text-transform: uppercase;
-  line-height: 0.95;
-  letter-spacing: -0.02em;
+  line-height: 1;
+  letter-spacing: 0;
 }
 
 a {
@@ -61,21 +63,20 @@ img {
 
 // ---- Custom Scrollbar ----
 ::-webkit-scrollbar {
-  width: 16px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
   background: $nb-bg;
-  border-left: $border-thin;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $nb-pink;
+  background: rgba($nb-black, 0.35);
   border: $border-thin;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: $nb-orange;
+  background: $nb-black;
 }
 
 // ---- Marquee Animation ----
