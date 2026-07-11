@@ -1,26 +1,23 @@
 <nav class="navbar">
   <div class="navbar__container">
     <div class="navbar__inner">
-      <!-- Logo -->
-      <a class="navbar__logo" (click)="scrollTo('hero')">
+      <a href="#hero" class="navbar__logo" (click)="scrollTo('hero')">
         <div class="navbar__logo-icon">
           <i class="ph-bold ph-code"></i>
         </div>
         <span class="navbar__logo-text">AIMAN.DEV</span>
       </a>
 
-      <!-- Desktop Menu -->
       <div class="navbar__desktop-menu">
-        <a class="navbar__link navbar__link--yellow" (click)="scrollTo('about')">About</a>
-        <a class="navbar__link navbar__link--pink" (click)="scrollTo('projects')">Projects</a>
-        <a class="navbar__link navbar__link--green" (click)="scrollTo('skills')">Skills</a>
-        <a class="navbar__cta" (click)="scrollTo('contact')">
+        <a href="#about" class="navbar__link" (click)="scrollTo('about')">About</a>
+        <a href="#projects" class="navbar__link" (click)="scrollTo('projects')">Work</a>
+        <a href="#skills" class="navbar__link" (click)="scrollTo('skills')">Skills</a>
+        <a href="#contact" class="navbar__cta" (click)="scrollTo('contact')">
           <span>Say Hi</span>
           <i class="ph-bold ph-paper-plane-right"></i>
         </a>
       </div>
 
-      <!-- Mobile Menu Button -->
       <button
         class="navbar__mobile-btn"
         (click)="toggleMenu()"
@@ -38,9 +35,9 @@
     <button class="mobile-menu__close" (click)="closeMenu()" aria-label="Close navigation menu">
       <i class="ph-bold ph-x"></i>
     </button>
-    <a class="mobile-menu__link mobile-menu__link--yellow" (click)="scrollTo('about')">About</a>
-    <a class="mobile-menu__link mobile-menu__link--pink" (click)="scrollTo('projects')">Projects</a>
-    <a class="mobile-menu__link mobile-menu__link--green" (click)="scrollTo('skills')">Skills</a>
-    <a class="mobile-menu__link mobile-menu__link--orange" (click)="scrollTo('contact')">Contact</a>
+    <a href="#about" class="mobile-menu__link" (click)="scrollTo('about')">About</a>
+    <a href="#projects" class="mobile-menu__link" (click)="scrollTo('projects')">Work</a>
+    <a href="#skills" class="mobile-menu__link" (click)="scrollTo('skills')">Skills</a>
+    <a href="#contact" class="mobile-menu__link" (click)="scrollTo('contact')">Contact</a>
   </div>
 }

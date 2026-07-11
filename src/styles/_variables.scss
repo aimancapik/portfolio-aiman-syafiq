@@ -3,13 +3,13 @@
 // ============================================
 
 // Color Palette
-$nb-yellow: #C9A227;
-$nb-pink: #B86F8A;
-$nb-blue: #6F87A8;
-$nb-green: #6F8F78;
-$nb-orange: #B76E32;
-$nb-bg: #F3F1EA;
-$nb-black: #151515;
+$nb-yellow: #d8c7a0;
+$nb-pink: #d6b5aa;
+$nb-blue: #b9c4ca;
+$nb-green: #aebca8;
+$nb-orange: #a64b2a;
+$nb-bg: #f6f4ef;
+$nb-black: #20201e;
 $nb-white: #FFFFFF;
 
 // Typography
@@ -20,11 +20,11 @@ $border-thin: 1px solid $nb-black;
 $border-thick: 2px solid $nb-black;
 
 // Shadows
-$shadow-sm: 0 14px 32px rgba(21, 21, 21, 0.08);
-$shadow-lg: 0 24px 60px rgba(21, 21, 21, 0.14);
-$shadow-hover: 0 18px 42px rgba(21, 21, 21, 0.14);
-$shadow-hover-lg: 0 28px 70px rgba(21, 21, 21, 0.18);
-$shadow-active: 0 8px 18px rgba(21, 21, 21, 0.1);
+$shadow-sm: 0 8px 24px rgba(32, 32, 30, 0.06);
+$shadow-lg: 0 16px 44px rgba(32, 32, 30, 0.08);
+$shadow-hover: 0 12px 28px rgba(32, 32, 30, 0.12);
+$shadow-hover-lg: 0 18px 48px rgba(32, 32, 30, 0.13);
+$shadow-active: 0 4px 12px rgba(32, 32, 30, 0.1);
 
 // Breakpoints
 $bp-sm: 640px;

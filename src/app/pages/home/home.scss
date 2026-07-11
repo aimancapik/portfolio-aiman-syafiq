@@ -2,310 +2,42 @@
 @use '../../../styles/mixins' as *;
 
 .hero {
-  --parallax-title-x: 0px;
-  --parallax-title-y: 0px;
-  --parallax-circle-x: 0px;
-  --parallax-circle-y: 0px;
-  --parallax-square-x: 0px;
-  --parallax-square-y: 0px;
-  --parallax-avatar-x: 0px;
-  --parallax-avatar-y: 0px;
-  --parallax-avatar-rotate-x: 0deg;
-  --parallax-avatar-rotate-y: 0deg;
-  --parallax-tag-x: 0px;
-  --parallax-tag-y: 0px;
-  --parallax-placeholder-x: 0px;
-  --parallax-placeholder-y: 0px;
-
-  padding-top: calc(#{$nav-height} + 2rem);
-  padding-bottom: 5rem;
-  min-height: 90vh;
-  display: flex;
+  min-height: 100vh;
+  padding: calc(#{$nav-height} + 4rem) 0 5rem;
+  display: grid;
   align-items: center;
   overflow: hidden;
   position: relative;
 
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background:
-      linear-gradient(90deg, rgba($nb-bg, 0.62), rgba($nb-bg, 0.22) 52%, rgba($nb-bg, 0.58)),
-      radial-gradient(circle at 18% 16%, rgba($nb-white, 0.34), transparent 30%);
-  }
+  &::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(90deg, rgba($nb-bg, .58), rgba($nb-bg, .04) 68%); }
 
-  &__container {
-    @include container;
-    position: relative;
-    z-index: 2;
-  }
+  &__container { @include container; width: 100%; position: relative; z-index: 2; }
+  &__grid { display: grid; gap: 3rem; align-items: center; }
+  &__content { max-width: 44rem; animation: hero-rise .7s both cubic-bezier(.2, .8, .2, 1); }
+  &__eyebrow { color: $nb-orange; font-size: .78rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  &__title { font-size: clamp(3.6rem, 9vw, 7.5rem); margin-bottom: 1.75rem; }
+  &__title-highlight { color: $nb-orange; }
+  &__description { max-width: 37rem; color: rgba($nb-black, .72); font-size: clamp(1.1rem, 2vw, 1.35rem); line-height: 1.55; }
+  &__actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 2.25rem; }
+  &__btn { display: inline-flex; align-items: center; gap: .55rem; border: $border-thin; border-radius: 999px; font-size: .9rem; font-weight: 700; padding: .85rem 1.25rem; transition: background-color .2s ease, color .2s ease, transform .2s ease; &:hover { transform: translateY(-2px); } }
+  &__btn--primary { background: $nb-black; color: $nb-white; }
+  &__btn--secondary { background: transparent; &:hover { background: $nb-white; } }
+  &__graphic { position: relative; min-height: 22rem; display: grid; place-items: center; animation: hero-rise .8s .12s both cubic-bezier(.2, .8, .2, 1); }
+  &__deco-circle { position: absolute; width: 17rem; aspect-ratio: 1; border-radius: 50%; background: $nb-yellow; opacity: .55; transform: translate(4rem, 3rem); animation: circle-drift 9s ease-in-out infinite alternate; }
+  &__deco-square { position: absolute; width: 8rem; aspect-ratio: 1; border: $border-thin; background: $nb-orange; opacity: .9; transform: translate(-8rem, -6rem); animation: square-drift 11s ease-in-out infinite alternate; }
+  &__avatar { width: min(100%, 27rem); aspect-ratio: .88; background: $nb-white; padding: .75rem; position: relative; box-shadow: $shadow-lg; animation: portrait-float 7s ease-in-out infinite; }
+  &__avatar-tag { position: absolute; left: 1.25rem; bottom: 1.25rem; background: $nb-black; color: $nb-white; padding: .45rem .65rem; font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; z-index: 1; }
+  &__avatar-placeholder, &__avatar-image { height: 100%; width: 100%; }
+  &__avatar-image { object-fit: cover; object-position: center 35%; filter: grayscale(1) contrast(1.08); transition: filter .3s ease; }
+  &__avatar:hover &__avatar-image { filter: grayscale(0) contrast(1); }
+  &__avatar-badge { display: none; }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
-
-    @include respond-to(lg) {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    z-index: 1;
-  }
-
-  &__badge {
-    display: inline-block;
-    background: rgba($nb-green, 0.14);
-    padding: 0.55rem 0.9rem;
-    @include nb-border;
-    align-self: flex-start;
-    border-radius: 999px;
-
-    p {
-      font-weight: 700;
-      font-size: 0.875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-    }
-  }
-
-  &__title {
-    font-size: 3.75rem;
-    line-height: 0.9;
-    letter-spacing: -0.05em;
-
-    @include respond-to(sm) {
-      font-size: 4.5rem;
-    }
-
-    @include respond-to(lg) {
-      font-size: 6rem;
-    }
-
-    &-highlight {
-      display: inline-block;
-      color: $nb-orange;
-      padding: 0;
-      margin-top: 0.5rem;
-      transform:
-        translate(var(--parallax-title-x), var(--parallax-title-y))
-        rotate(0deg);
-      transition: transform 0.18s ease-out;
-    }
-  }
-
-  &__description {
-    font-size: 1.25rem;
-    font-weight: 500;
-    max-width: 32rem;
-    line-height: 1.6;
-    color: rgba($nb-black, 0.76);
-
-    @include respond-to(sm) {
-      font-size: 1.35rem;
-    }
-  }
-
-  &__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding-top: 1rem;
-  }
-
-  &__btn {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
-    border-radius: 999px;
-    @include nb-button;
-
-    &--primary {
-      background: $nb-black;
-      color: $nb-white;
-
-      i { color: $nb-yellow; }
-    }
-
-    &--secondary {
-      background: $nb-white;
-      color: $nb-black;
-
-      i { font-size: 1.5rem; }
-    }
-  }
-
-  // Right side graphic
-  &__graphic {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 400px;
-    perspective: 900px;
-  }
-
-  &__deco-circle {
-    position: absolute;
-    width: 16rem;
-    height: 16rem;
-    background: rgba($nb-blue, 0.2);
-    border-radius: 50%;
-    border: 1px solid rgba($nb-black, 0.12);
-    z-index: -1;
-    transform:
-      translate(
-        calc(2.5rem + var(--parallax-circle-x)),
-        calc(2.5rem + var(--parallax-circle-y))
-      );
-  }
-
-  &__deco-square {
-    position: absolute;
-    width: 8rem;
-    height: 8rem;
-    background: rgba($nb-yellow, 0.22);
-    transform:
-      translate(var(--parallax-square-x), var(--parallax-square-y))
-      rotate(45deg)
-      translate(-5rem, -5rem);
-    border: 1px solid rgba($nb-black, 0.12);
-    z-index: -1;
-  }
-
-  &__avatar {
-    width: 100%;
-    max-width: 28rem;
-    aspect-ratio: 1;
-    background: $nb-white;
-    @include nb-border(thick);
-    @include nb-shadow(lg);
-    border-radius: 1.25rem;
-    padding: 1.5rem;
-    position: relative;
-    overflow: hidden;
-    transform:
-      rotateX(var(--parallax-avatar-rotate-x))
-      rotateY(var(--parallax-avatar-rotate-y))
-      translate(var(--parallax-avatar-x), var(--parallax-avatar-y));
-    transition: transform 0.18s ease-out, box-shadow 0.18s ease-out;
-
-    &-tag {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: $nb-orange;
-      color: $nb-white;
-      font-weight: 700;
-      padding: 0.25rem 1rem;
-      border-left: $border-thin;
-      border-bottom: $border-thin;
-      z-index: 2;
-      font-size: 0.875rem;
-      transform: translate(var(--parallax-tag-x), var(--parallax-tag-y));
-      transition: transform 0.18s ease-out;
-    }
-
-    &-placeholder {
-      width: 100%;
-      height: 100%;
-      background: $nb-yellow;
-      @include nb-border;
-      @include flex-center;
-      border-radius: 0.75rem;
-      flex-direction: column;
-      gap: 1rem;
-      transform: translate(var(--parallax-placeholder-x), var(--parallax-placeholder-y));
-      transition: filter 0.3s ease, transform 0.18s ease-out;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center 35%;
-        display: block;
-        filter: grayscale(1) contrast(1.1);
-        transition: filter 0.3s ease;
-      }
-    }
-
-    &-badge {
-      position: absolute;
-      bottom: 2.5rem;
-      left: -1.5rem;
-      background: $nb-white;
-      padding: 0.5rem 1rem;
-      font-weight: 700;
-      @include nb-border;
-      @include nb-shadow;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      transform: rotate(-5deg);
-      transition: transform 0.3s ease;
-
-      i { color: $nb-orange; }
-    }
-
-    &:hover &-badge {
-      transform: rotate(0deg);
-    }
-
-    &:hover &-placeholder {
-      img {
-        filter: grayscale(0) contrast(1);
-      }
-    }
-  }
+  @include respond-to(lg) { &__grid { grid-template-columns: 1.1fr .9fr; gap: 5rem; } }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero {
-    &__title-highlight,
-    &__deco-circle,
-    &__deco-square,
-    &__avatar,
-    &__avatar-tag,
-    &__avatar-placeholder {
-      transform: none;
-      transition: none;
-    }
-  }
-}
-
-// Marquee
-.marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  display: flex;
-  border-top: $border-thin;
-  border-bottom: $border-thin;
-  background: $nb-black;
-  color: $nb-white;
-  padding: 0.75rem 0;
-
-  &__content {
-    display: inline-flex;
-    gap: 2rem;
-    animation: marquee 50s linear infinite;
-    font-size: 1rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
-  &__dot {
-    opacity: 0.5;
-  }
-}
+@media (max-width: 639px) { .hero { min-height: auto; &__graphic { min-height: 18rem; } &__deco-square { transform: translate(-5rem, -5rem); } } }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(1.25rem); } to { opacity: 1; transform: translateY(0); } }
+@keyframes circle-drift { to { transform: translate(5.5rem, 1.5rem) scale(1.08); } }
+@keyframes square-drift { to { transform: translate(-6.5rem, -7rem) rotate(12deg); } }
+@keyframes portrait-float { 50% { transform: translateY(-.6rem); } }
+@media (prefers-reduced-motion: reduce) { .hero__content, .hero__graphic, .hero__deco-circle, .hero__deco-square, .hero__avatar { animation: none; } }

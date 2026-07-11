@@ -1,7 +1,8 @@
 <section id="contact" class="contact">
   <div class="contact__container">
     <div class="contact__card">
-      <h2 class="contact__title">Let's Build<br>Properly.</h2>
+      <p class="contact__eyebrow">Contact</p>
+      <h2 class="contact__title">Let’s build something useful.</h2>
       <p class="contact__subtitle">Currently open for new opportunities.</p>
 
       <form
@@ -16,7 +17,7 @@
             type="text"
             formControlName="name"
             class="contact__input"
-            placeholder="YOUR NAME"
+            placeholder="Your name"
             [class.contact__input--error]="contactForm.controls.name.touched && contactForm.controls.name.invalid">
         </div>
 
@@ -27,7 +28,7 @@
             type="email"
             formControlName="email"
             class="contact__input"
-            placeholder="YOUR@EMAIL.COM"
+            placeholder="you@example.com"
             [class.contact__input--error]="contactForm.controls.email.touched && contactForm.controls.email.invalid">
         </div>
 
@@ -37,7 +38,7 @@
             id="message"
             formControlName="message"
             class="contact__input contact__textarea"
-            placeholder="YOUR MESSAGE HERE..."
+            placeholder="Tell me a little about what you’re building."
             rows="4"
             [class.contact__input--error]="contactForm.controls.message.touched && contactForm.controls.message.invalid"></textarea>
         </div>
@@ -60,7 +61,7 @@
         </button>
 
         @if (formState() === 'success') {
-          <div class="contact__success">
+          <div class="contact__success" aria-live="polite">
             WhatsApp chat opened with your message ready to send.
           </div>
         }

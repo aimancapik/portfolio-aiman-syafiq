@@ -36,7 +36,7 @@ void main() {
   vec2 uv = v_uv;
   vec2 p = (gl_FragCoord.xy - 0.5 * u_resolution.xy) / min(u_resolution.x, u_resolution.y);
 
-  float t = u_time * 0.12;
+  float t = u_time * 0.16;
   float wave =
     sin((p.x * 3.2 + t) * 3.14159) *
     cos((p.y * 2.6 - t * 1.4) * 3.14159);
@@ -49,14 +49,14 @@ void main() {
   float ink = softCircle(uv - wave * 0.025, driftB, 0.24, 0.32);
   float light = softCircle(uv + vec2(wave * 0.02), driftC, 0.18, 0.24);
 
-  vec3 base = vec3(0.953, 0.945, 0.918);
-  vec3 amber = vec3(0.72, 0.39, 0.16);
-  vec3 graphite = vec3(0.08, 0.08, 0.08);
-  vec3 pearl = vec3(1.0, 0.98, 0.92);
+  vec3 base = vec3(0.965, 0.957, 0.937);
+  vec3 amber = vec3(0.651, 0.294, 0.165);
+  vec3 graphite = vec3(0.125, 0.125, 0.118);
+  vec3 pearl = vec3(1.0, 0.985, 0.95);
 
   vec3 color = base;
-  color = mix(color, amber, warm * 0.86);
-  color = mix(color, graphite, ink * 0.58);
+  color = mix(color, amber, warm * 0.72);
+  color = mix(color, graphite, ink * 0.46);
   color = mix(color, pearl, light * 0.34);
 
   float grain = fract(sin(dot(gl_FragCoord.xy + u_time, vec2(12.9898, 78.233))) * 43758.5453);

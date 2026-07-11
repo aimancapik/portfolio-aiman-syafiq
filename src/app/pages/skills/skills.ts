@@ -15,7 +15,7 @@ export class Skills {
       color: 'blue',
       rotation: '-1deg',
       hoverColor: 'yellow',
-      skills: ['Ionic 8', 'Angular 18', 'TypeScript', 'SCSS', 'Signals', 'RxJS', 'React', 'Flutter', 'Tailwind'],
+      skills: ['Angular', 'Ionic', 'TypeScript', 'SCSS', 'Signals', 'RxJS', 'React', 'Flutter'],
     },
     {
       title: 'Backend',

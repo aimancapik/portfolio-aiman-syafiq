@@ -28,10 +28,8 @@ body {
   font-family: $font-primary;
   color: $nb-black;
   background-color: $nb-bg;
-  background-image:
-    linear-gradient(rgba($nb-black, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba($nb-black, 0.045) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-image: radial-gradient(rgba($nb-black, 0.05) 0.75px, transparent 0.75px);
+  background-size: 18px 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
@@ -45,10 +43,9 @@ body {
 
 // ---- Typography ----
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 1;
-  letter-spacing: 0;
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 
 a {
@@ -56,9 +53,33 @@ a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid $nb-orange;
+  outline-offset: 3px;
+}
+
 img {
   max-width: 100%;
   display: block;
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.65s ease, transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.scroll-reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scroll-reveal { opacity: 1; transform: none; transition: none; }
 }
 
 // ---- Custom Scrollbar ----
