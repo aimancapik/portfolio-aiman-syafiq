@@ -10,6 +10,22 @@ import type { Project } from '../../shared/models/portfolio.model';
 export class Projects {
   protected readonly projects = signal<Project[]>([
     {
+      title: 'Loopdale',
+      description:
+        'A fast-response air-con service lead capture flow that collects structured enquiries and automates follow-up through Google Sheets, Telegram, and email.',
+      image: 'assets/projects/loopdale-screen.png',
+      screens: [
+        'assets/projects/loopdale-screen.png',
+        'assets/projects/loopdale/automation-flow.svg',
+        'assets/projects/loopdale/google-sheets.png',
+        'assets/projects/loopdale/telegram-lead.png',
+      ],
+      tags: ['Express', 'Google Sheets', 'Telegram'],
+      liveUrl: 'https://loopdale-aircon.vercel.app/',
+      codeUrl: '#',
+      accentColor: 'blue',
+    },
+    {
       title: 'LepakSpot',
       description:
         'A vibrant discovery landing page for cafes, study spots, and chill hangouts with a bold now-trending hero and card-driven browsing.',
@@ -64,4 +80,3 @@ export class Projects {
     },
   ]);
 }
-
